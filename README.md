@@ -1,9 +1,5 @@
-countess
-=====
+## countess
 
-Mostly counting
+Mostly counting.
 
-Build
------
-
-    $ rebar3 compile
+A demo app for a blog post about rebar3 releases.

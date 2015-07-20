@@ -26,9 +26,13 @@ start_link() ->
 %% Supervisor callbacks
 %%====================================================================
 
-%% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-    {ok, { {one_for_all, 0, 1}, []} }.
+    Children = [
+        {countserv,
+            {countserv, start_link, []},
+            permanent, 5000, supervisor, [countserv]}
+    ],
+    {ok, {{one_for_one, 10, 1}, Children}}.
 
 %%====================================================================
 %% Internal functions
