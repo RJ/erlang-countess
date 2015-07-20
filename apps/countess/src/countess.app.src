@@ -1,0 +1,12 @@
+{application, 'countess',
+ [{description, "Mostly counting"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {'countess_app', []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []}
+ ]}.
