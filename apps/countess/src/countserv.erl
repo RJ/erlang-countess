@@ -46,7 +46,7 @@ handle_cast(_Msg, State) ->
 handle_info(tick, State = #state{counter=C, interval=I, step=S}) ->
     NewCounter = C + S,
     NewState = State#state{counter = NewCounter},
-    io:format("Counter is: ~B\n", [NewCounter]),
+    io:format("COUNTER IS: ~B\n", [NewCounter]),
     erlang:send_after(I, self(), tick),
     {noreply, NewState};
 
